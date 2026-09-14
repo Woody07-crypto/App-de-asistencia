@@ -38,10 +38,6 @@ Si hubiéramos usado un **método** del `State` (por ejemplo `_fila(...)` que de
 
 ## Registro de consultas a IA
 
-Transcribir aquí **cada** consulta real, íntegra (pregunta y respuesta). No inventar consultas que no se hayan enviado.
-
-Prompts listos para pegar en otra IA (definición / diferencia; no piden código ni el enunciado):
-
 ### Consulta 1 — ListView.builder
 
 - Herramienta: Gemini
