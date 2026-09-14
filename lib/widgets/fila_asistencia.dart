@@ -47,11 +47,6 @@ class FilaAsistencia extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 8),
-          Text(
-            presente ? 'Presente' : 'Ausente',
-            style: tema.textTheme.labelMedium,
-          ),
           Checkbox(
             value: presente,
             onChanged: (valor) {

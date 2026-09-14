@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'screens/pantalla_asistencia.dart';
 
-
-///
 void main() {
   runApp(const AppAsistencia());
 }

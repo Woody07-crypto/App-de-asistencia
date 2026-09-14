@@ -25,7 +25,7 @@ Cuando el usuario cambia un solo registro se llama a `setState` en `_PantallaAsi
 No repartimos `setState` en las filas. Para no reconstruir de más:
 
 - `ListView.builder` solo construye las filas visibles, no las doce de golpe.
-- `FilaAsistencia` es un `StatelessWidget` con constructor `const`; recibe datos por parámetros y no guarda estado.
+- `FilaAsistencia` es un `StatelessWidget`. Su constructor *puede* ser `const`, pero en la lista no se crea con `const` porque el callback cambia en cada ítem. Lo que sí evita trabajo extra es no guardar estado en la fila: solo recibe datos y avisa el cambio.
 - Cada fila usa `ValueKey` con el carné para que Flutter identifique el renglón.
 
 ## 3. Extracción de componente
@@ -113,16 +113,3 @@ Una clase StatelessWidget independiente crea un nodo propio con identidad única
 Un método auxiliar que devuelve un Row dentro de la misma clase no crea un componente independiente; Flutter lo interpreta simplemente como código expandido del build padre.
 -Reconstrucción: Con el método auxiliar, cada vez que la pantalla principal llama a setState, la fila se ve obligada a reconstruirse por completo al ser parte directa de ese mismo ciclo.
 
-### Consulta 6 — flutter analyze (solo si ya corrieron el comando)
-
-- Herramienta: Gemini
-- Fecha: 13/09/2026
-- Consulta (íntegra):
-
-```
-Al ejecutar flutter analyze obtuve este hallazgo exacto:
-
-¿Qué significa y por qué el analizador lo marca? No me corrijas el archivo ni me des el código nuevo. Solo la explicación del mensaje.
-```
-
-- Respuesta (íntegra): No se generaron hallazgos ni fue necesario consultar el analizador.

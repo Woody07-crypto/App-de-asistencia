@@ -1,4 +1,4 @@
-import '../models/estudiante.dart';
+import 'estudiante.dart';
 
 /// Persona 2 — Diego Alberto Baños Ehlerman — datos iniciales del grupo.
 /// No se escribe esta lista dentro de un widget. Restablecer vuelve a esta foto.

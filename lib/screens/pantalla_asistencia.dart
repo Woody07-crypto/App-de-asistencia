@@ -70,10 +70,14 @@ class _PantallaAsistenciaState extends State<PantallaAsistencia> {
                 children: [
                   Text(
                     'Ingeniebros',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: tema.textTheme.headlineSmall,
                   ),
                   Text(
                     'Presentes $_presentes / ${_estudiantes.length}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: tema.textTheme.titleMedium?.copyWith(
                       color: tema.colorScheme.onSurfaceVariant,
                     ),
@@ -91,6 +95,8 @@ class _PantallaAsistenciaState extends State<PantallaAsistencia> {
                       child: const Text(
                         'Todos presente',
                         textAlign: TextAlign.center,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
@@ -101,6 +107,8 @@ class _PantallaAsistenciaState extends State<PantallaAsistencia> {
                       child: const Text(
                         'Restablecer',
                         textAlign: TextAlign.center,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
