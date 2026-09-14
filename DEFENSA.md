@@ -44,8 +44,8 @@ Prompts listos para pegar en otra IA (definición / diferencia; no piden código
 
 ### Consulta 1 — ListView.builder
 
-- Herramienta:
-- Fecha:
+- Herramienta: Gemini
+- Fecha: 13/09/2026
 - Consulta (íntegra):
 
 ```
@@ -53,11 +53,15 @@ Explica qué es ListView.builder en Flutter: qué hace itemBuilder, para qué si
 ```
 
 - Respuesta (íntegra):
+-Concepto clave: Es un constructor lazy de listas en Flutter.
+-Que hace itemCount?: Define la cantidad total de elementos que contiene la lista.
+-Que hace itemBuilder?: Función creadora que se ejecuta solo cuando un elemento va a entrar en pantalla, volviendose visible para el usuario.
+-Diferencia principal con un ListView normal: Mientras que el ListView tradicional crea todos sus children a la vez al cargarse, consumiendo demasiada memoria RAM en el proceso, el ListView.builder solo construye e instancia en memoria los widgets que tengan el espacio adecuado para la pantalla del dispositivo del usuario a medida que este haga scroll. 
 
 ### Consulta 2 — setState
 
-- Herramienta:
-- Fecha:
+- Herramienta: Gemini
+- Fecha: 13/09/2026
 - Consulta (íntegra):
 
 ```
@@ -65,11 +69,13 @@ Explica qué es ListView.builder en Flutter: qué hace itemBuilder, para qué si
 ```
 
 - Respuesta (íntegra):
+-Concepto clave: Es el método que le avisa al framework de Flutter que el estado interno de un StatefulWidget ha cambiado.
+-Qué dispara en el árbol?: Marca el widget dirty el cual programa la reejecución de su método build(), provocando así que la interfaz gráfica se vuelva a dibujar en pantalla actualizando únicamente los elementos cuya información sufrió cambios.
 
 ### Consulta 3 — StatelessWidget
 
-- Herramienta:
-- Fecha:
+- Herramienta: Gemini
+- Fecha: 13/09/2026
 - Consulta (íntegra):
 
 ```
@@ -77,11 +83,14 @@ Explica qué es ListView.builder en Flutter: qué hace itemBuilder, para qué si
 ```
 
 - Respuesta (íntegra):
+-Concepto clave: Es un widget inmutable que no posee un estado interno que cambie con el tiempo.
+-Paso de datos por cada constructor: Recibe toda la información que necesita para dibujarse desde afuera.
+-Por qué no debe leer el estado del padre?: Debe ser un componente puro e independiente, ya que si se intentara acceder o manipular directamente el estado de una pantalla externa por su cuenta, rompería el principio de encapsulamiento y modularidad, haciendo que sea imposible reutilizarlo en otras partes del código.
 
 ### Consulta 4 — const
 
-- Herramienta:
-- Fecha:
+- Herramienta: Gemini
+- Fecha: 13/09/2026
 - Consulta (íntegra):
 
 ```
@@ -89,11 +98,13 @@ En Flutter, ¿qué significa marcar un widget o un constructor con const? ¿Qué
 ```
 
 - Respuesta (íntegra):
+-Concepto clave: Indica que el widget es una constante en tiempo de compilación. Sus valores y estructura nunca cambiarán tras ser creado.
+-Relación con el analizador y rendimiento: Le indica a Flutter que el widget puede ser reutilizado en memoria exactamente como está. Por ejemplo, si un widget padre se vuelve a dibujar, Flutter se salta la reconstrucción de los widgets marcados con const, optimizando el rendimiento. El analizador exige colocar const en constructores elegibles como una buena práctica de código. 
 
 ### Consulta 5 — clase vs método
 
-- Herramienta:
-- Fecha:
+- Herramienta: Gemini
+- Fecha: 13/09/2026
 - Consulta (íntegra):
 
 ```
@@ -101,19 +112,21 @@ Ya escribí la fila de una lista de dos formas: (1) una clase StatelessWidget in
 ```
 
 - Respuesta (íntegra):
+-Diferencia de identidad: 
+Una clase StatelessWidget independiente crea un nodo propio con identidad única en el árbol de widgets (Element Tree), permitiendo aprovechar constructores const y evitar re-renderizados si sus propiedades no cambiaron.
+Un método auxiliar que devuelve un Row dentro de la misma clase no crea un componente independiente; Flutter lo interpreta simplemente como código expandido del build padre.
+-Reconstrucción: Con el método auxiliar, cada vez que la pantalla principal llama a setState, la fila se ve obligada a reconstruirse por completo al ser parte directa de ese mismo ciclo.
 
 ### Consulta 6 — flutter analyze (solo si ya corrieron el comando)
 
-- Herramienta:
-- Fecha:
+- Herramienta: Gemini
+- Fecha: 13/09/2026
 - Consulta (íntegra):
 
 ```
 Al ejecutar flutter analyze obtuve este hallazgo exacto:
 
-[PEGAR AQUÍ LA SALIDA REAL DEL ANALIZADOR]
-
 ¿Qué significa y por qué el analizador lo marca? No me corrijas el archivo ni me des el código nuevo. Solo la explicación del mensaje.
 ```
 
-- Respuesta (íntegra):
+- Respuesta (íntegra): No se generaron hallazgos ni fue necesario consultar el analizador.
